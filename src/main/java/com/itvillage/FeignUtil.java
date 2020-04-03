@@ -14,9 +14,9 @@ import java.util.Optional;
 @AllArgsConstructor
 public class FeignUtil {
 
-    private  UaaClientService uaaClientService;
+    private static UaaClientService uaaClientService;
 
-    public  String login(String userName,String password) {
+    public static String login(String userName,String password) {
 
         Optional<AccessTokenResponse> accessTokenResponseOptional=uaaClientService.login(
                 new LoginRequest(userName,password));

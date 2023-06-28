@@ -3,6 +3,7 @@ package com.itvillage.client;
 
 
 import com.itvillage.client.dto.request.LoginRequest;
+import com.itvillage.client.dto.request.SignUpRequest;
 import com.itvillage.client.dto.response.AccessTokenResponse;
 import com.itvillage.client.dto.response.LoggedUserDetailsResponse;
 import feign.Headers;
@@ -21,6 +22,9 @@ public interface UaaClientService {
 
     @PostMapping("public/signin")
     Optional<AccessTokenResponse> login(LoginRequest loginRequest);
+
+    @PostMapping("public/signup")
+    Optional<String> registerUser(SignUpRequest signUpRequest);
 
 //    @GetMapping("loggedUser")
 //    @Headers("Authorization: Bearer {authorizationHeader}")
